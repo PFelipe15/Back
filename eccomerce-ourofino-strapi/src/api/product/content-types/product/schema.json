@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "collection": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::collection.collection"
+    },
+    "hot": {
+      "type": "boolean"
+    },
+    "price_primary": {
+      "type": "decimal",
+      "required": true
+    },
+    "variants_price": {
+      "type": "json"
+    },
+    "largura": {
+      "type": "decimal"
+    },
+    "comprimento": {
+      "type": "decimal"
+    },
+    "destaque_vitrine": {
+      "type": "boolean"
+    },
+    "peso": {
+      "type": "float"
+    },
+    "altura": {
+      "type": "decimal"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "default_messages",
+  "info": {
+    "singularName": "default-message",
+    "pluralName": "default-messages",
+    "displayName": "default_message"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "mensagem": {
+      "type": "string"
+    },
+    "remetente": {
+      "type": "enumeration",
+      "enum": [
+        "cliente",
+        "suporte"
+      ]
+    }
+  }
+}

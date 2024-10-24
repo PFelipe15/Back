@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "parametros",
+  "info": {
+    "singularName": "parametro",
+    "pluralName": "parametros",
+    "displayName": "parametro",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "descricao": {
+      "type": "string"
+    },
+    "configuracao": {
+      "type": "boolean"
+    },
+    "slug": {
+      "type": "string",
+      "unique": true
+    }
+  }
+}

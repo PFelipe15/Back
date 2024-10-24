@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "order",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "order_date": {
+      "type": "datetime"
+    },
+    "total": {
+      "type": "decimal"
+    },
+    "customer": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::customer.customer"
+    },
+    "link_payment": {
+      "type": "string"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "paid",
+        "pending",
+        "failure",
+        "cancelled"
+      ]
+    },
+    "payment_id": {
+      "type": "string"
+    },
+    "total_frete": {
+      "type": "decimal"
+    },
+    "codigo_rastreio": {
+      "type": "string"
+    },
+    "endereco_entrega": {
+      "type": "json"
+    },
+    "transportadora_id": {
+      "type": "integer"
+    }
+  }
+}

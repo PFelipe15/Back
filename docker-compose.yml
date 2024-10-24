@@ -1,0 +1,46 @@
+services:
+  # todo: strapi:
+  #   build:
+  #     context: ./eccomerce-ourofino-strapi
+  #     dockerfile: Dockerfile
+  #   image: strapi/base
+  #   container_name: ourofino-strapi  
+  #   restart: always    
+  #   ports:
+  #     - 1337:1337
+  #   depends_on:
+  #    - strapiDB
+  #   environment:
+  #     DATABASE_CLIENT: postgres
+  #     DATABASE_HOST: strapiDB
+  #     DATABASE_PORT: 5432
+  #     DATABASE_NAME: ourofino
+  #     DATABASE_USERNAME: postgres
+  #     DATABASE_PASSWORD: 1234
+  #     DATABASE_SSL: false
+  #   volumes:
+  #     - ./eccomerce-ourofino-strapi:/usr/src/app
+  #     - /usr/src/app/node_modules
+  #   command: npm run develop --verbose
+  #   networks:
+  #    - strapi
+
+  strapiDB:
+    image: postgres:latest
+    platform: linux/amd64
+    container_name: ourofino-database
+    restart: always
+    environment:
+      POSTGRES_DB: ourofino
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+    ports:
+      - "5432:5432"
+    networks:
+      - strapi
+    volumes:
+      - ./eccomerce-ourofino-database:/var/lib/postgresql/data
+networks:
+  strapi:
+    name: Strapi
+    driver: bridge
